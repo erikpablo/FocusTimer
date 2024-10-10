@@ -1,6 +1,7 @@
 import state from "./state.js";
 import * as el from "./elements.js"
 import { reset } from "./actions.js"
+import { kitchenTimer } from "./sounds.js";
 
 let number = 0;
 
@@ -21,6 +22,7 @@ export function countdown() {
 
     if(minutes < 0) {
         reset()
+        kitchenTimer.play()
         return
     }
 
